@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel = "tests" name="Suite">
+	
+
+	<groups>
+		<run>
+			<include name="Filter"></include>
+		</run>
+	</groups>
+	
+			<listeners>
+    <listener class-name="testautomationproject.TestComponents.Listeners"/>
+  </listeners>
+	
+		
+		
+  <test thread-count="1" name="Filter Products Test">
+    <classes>
+      <class name="testautomationproject.Seleniumprojectjava.ExtendedTest"/>
+      
+    </classes>
+  </test> <!-- Test -->
+  
+ 
+	
+	
+</suite> <!-- Suite -->
+
+

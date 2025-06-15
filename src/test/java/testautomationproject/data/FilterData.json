@@ -1,0 +1,15 @@
+
+{
+  "fashion": ["ZARA COAT 3", "ADIDAS ORIGINAL"],
+  "electronics": ["IPHONE 13 PRO"],
+  "household": [],
+  "t-shirts" : [],
+  "shirts" : ["ZARA COAT 3", "ADIDAS ORIGINAL"],
+  "mobiles" : ["IPHONE 13 PRO"],
+  "men" : [],
+  "women" : ["ADIDAS ORIGINAL","IPHONE 13 PRO"],
+  "ADIDAS":["ADIDAS ORIGINAL"],
+  "ZARA": ["ZARA COAT 3"],
+  "IPHONE":["IPHONE 13 PRO"]
+  
+} 

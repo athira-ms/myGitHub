@@ -1,0 +1,17 @@
+<configuration>
+
+    <!-- Define the root logger -->
+    <root level="debug">
+        <!-- Console Appender (prints logs to the console) -->
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+    <!-- Console appender to output logs to the console -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- Set the log format -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+</configuration>
