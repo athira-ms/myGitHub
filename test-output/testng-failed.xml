@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testautomationproject.Seleniumprojectjava.FlightBookingBasic">
+      <class name="testautomationproject.Seleniumprojectjava.UploadDownloadBasic">
         <methods>
           <include name="LaunchApplication"/>
-          <include name="BasicTestFlights"/>
           <include name="tearDown"/>
+          <include name="BasicUploadDownload"/>
         </methods>
-      </class> <!-- testautomationproject.Seleniumprojectjava.FlightBookingBasic -->
+      </class> <!-- testautomationproject.Seleniumprojectjava.UploadDownloadBasic -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
