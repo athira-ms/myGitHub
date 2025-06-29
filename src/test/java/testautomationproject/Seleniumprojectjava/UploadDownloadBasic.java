@@ -1,8 +1,10 @@
 package testautomationproject.Seleniumprojectjava;
 
 import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
@@ -10,12 +12,16 @@ import org.testng.annotations.Test;
 
 import testautomationproject.TestComponents.BaseTest;
 import testautomationproject.TestComponents.Listeners;
+import testautomationproject.data.ExcelReaderEndtoEnd;
 
 public class UploadDownloadBasic extends BaseTest {
 	private static final Logger logger = LoggerFactory.getLogger(Listeners.class);
 
 	@Test
-	public void BasicUploadDownload() throws InterruptedException {
+	public void BasicUploadDownload() throws InterruptedException, InvalidFormatException, IOException {
+
+		String actualprice = "345";
+		String updatedprice = "545";
 		FileUploadPOM uploadobj = new FileUploadPOM(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 		uploadobj.goToUploadUrl();
@@ -54,7 +60,22 @@ public class UploadDownloadBasic extends BaseTest {
 		Thread.sleep(3);
 		driver.navigate().refresh();
 		String price = uploadobj.getPrice("Apple");
-		Assert.assertEquals(price, "345");
+		Assert.assertEquals(price, actualprice);
 		logger.info("Price is expected");
+//		ExcelReader ex = new ExcelReader();
+//		System.out.println(ex.readFile(file, "Apple"));
+
+		ExcelReaderEndtoEnd exc = new ExcelReaderEndtoEnd();
+		System.out.println(exc.getRowNumber(file, "Apple"));
+		int row = exc.getRowNumber(file, "Apple");
+		System.out.println(exc.getColumnNumber(file, "price"));
+		int col = exc.getColumnNumber(file, "price");
+		Assert.assertTrue(exc.updateCell(file, row, col, updatedprice));
+		uploadobj.clickUpload().sendKeys("C:\\Users\\ems01\\Downloads\\download.xlsx");
+		logger.info("Updated excel is uploaded");
+		String newPrice = uploadobj.getPrice("Apple");
+		Assert.assertEquals(newPrice, updatedprice);
+		logger.info("Updated price is matching");
+
 	}
 }
