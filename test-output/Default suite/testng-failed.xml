@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testautomationproject.Seleniumprojectjava.DatafromExcelTest">
+      <class name="testautomationproject.Seleniumprojectjava.sampleShadowDOM">
         <methods>
           <include name="LaunchApplication"/>
-          <include name="getDataFromExcel" invocation-numbers="0 1"/>
           <include name="tearDown"/>
+          <include name="shadowDomTest"/>
         </methods>
-      </class> <!-- testautomationproject.Seleniumprojectjava.DatafromExcelTest -->
+      </class> <!-- testautomationproject.Seleniumprojectjava.sampleShadowDOM -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
